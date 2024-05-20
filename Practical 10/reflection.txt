@@ -1,0 +1,4 @@
+Frankly, I find this practical to be challenging. Nevertheless, it is also quite intriguing.
+Throughout this practical exercise, I have learned how to create a graph that illustrates the principles of infection. 
+The spatial_SIR model particularly stands out to me, as it generates graphs based on a timeline. 
+Moreover, the spatial_SIR model allows for the graph to vary with each attempt, making it more applicable to real-world scenarios

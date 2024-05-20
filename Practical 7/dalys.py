@@ -30,8 +30,6 @@ plt.xticks(china_data.Year, rotation=45)
 plt.show()  
 plt.clf()  
 
-
-
 # Solutions for the question
 In_2019 = []  
 for i in dalys_data.loc[:,"Year"]:  

@@ -1,0 +1,7 @@
+The similarity between human and mouse genomes is 92.53968253968254%, indicating a high level of genetic identity. Their alignment score, which measures the quality of the sequence alignment, is 3137.0.
+
+In contrast, the percentage of identical genetic material between human and rat is 91.74603174603175%, slightly lower than the human-mouse comparison. The alignment score for human and rat is 3107.0.
+
+Remarkably, the percentage of identity between the rat and mouse genomes is even higher, at 96.82539682539682%. Their alignment score is 3261.0, suggesting a very close evolutionary relationship between these two rodent species.
+
+Given these data, it is evident that mouse and rat are the most closely related species among the three mentioned. However, mouse is often considered a better model organism for human studies due to its smaller size, shorter lifespan, and the availability of genetic tools and resources.

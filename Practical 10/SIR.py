@@ -1,56 +1,39 @@
-import numpy as np  
-import matplotlib.pyplot as plt  
-  
-# Parameters  
-N = 10000  # Total population  
-S = N - 1  # Initial number of susceptible individuals  
-I = 1      # Initial number of infected individuals  
-R = 0      # Initial number of recovered individuals  
-beta = 0.3  # Infection rate  
-gamma = 0.05  # Recovery rate  
-  
-# Time steps  
-t_max = 1000  
-dt = 1  # Time step size  
-  
+import numpy as np
+import matplotlib.pyplot as plt
+# Parameters 
+N = 10000
+S = N - 1 
+I = 1   
+R = 0     
+beta = 0.3  
+gamma = 0.05 
 # Arrays to store the values of S, I, R  
-S_arr = [S]  
-I_arr = [I]  
-R_arr = [R]  
-  
-# SIR model simulation  
-for t in range(t_max):  
-    dS_dt = -beta * S * I / N  # Change in susceptible  
-    dI_dt = beta * S * I / N - gamma * I  # Change in infected  
-    dR_dt = gamma * I  # Change in recovered  
-      
-    # Update S, I, R  
-    S += dS_dt * dt  
-    I += dI_dt * dt  
-    R += dR_dt * dt  
-      
-    # Ensure no negative values and round to integers (optional)  
-    S = max(0, int(S))  
-    I = max(0, int(I))  
-    R = max(0, int(R))  
-      
-    # Append SIR to the arrays  
-    S_arr.append(S)  
-    I_arr.append(I)  
-    R_arr.append(R)  
-  
-# Time array  
-time = np.arange(t_max + 1) * dt  
-  
-# Plot the SIR model using Matplotlib  
-plt.figure(figsize=(6, 4), dpi=150)  
-plt.plot(time, S_arr, label='Susceptible')  
-plt.plot(time, I_arr, label='Infected')  
-plt.plot(time, R_arr, label='Recovered')  
-plt.xlabel('Time')  
-plt.ylabel('Number of People')  
-plt.title('SIR Model')  
-plt.legend()  
-plt.show()  
-  
-plt.savefig("SIR.png")  # Save the figure
+S_arr = [S]
+I_arr = [I]
+R_arr = [R] 
+for i in range(1,1000):  
+    infection_rate = beta * (I / N)
+    new_I = np.random.choice([0, 1], size=S, p=[1 - infection_rate, infection_rate])
+    S -= new_I.sum()
+    I += new_I.sum()
+    new_R = np.random.choice([0, 1], size=I, p=[1 - gamma, gamma])
+    I -= new_R.sum()
+    R += new_R.sum()
+# Append SIR to the arrays  
+    S_arr.append(S)
+    I_arr.append(I)
+    R_arr.append(R)
+
+time=list(range(1,1001))
+
+# Plot the SIR model using Matplotlib
+plt.figure(figsize=(6, 4), dpi=150)
+plt.plot(time, S_arr, label='Susceptible')
+plt.plot(time, I_arr, label='Infected')
+plt.plot(time, R_arr, label='Recovered')
+plt.xlabel('Time')
+plt.ylabel('Number of People')
+plt.title('SIR Model')
+plt.legend()
+plt.show()
+plt.savefig("SIR.png")

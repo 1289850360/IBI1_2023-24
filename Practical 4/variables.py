@@ -9,7 +9,7 @@ d=a-b
 e=b-c
 #e is the improvement from running and strength training
 if d>e:
-     print("The improvement from running training only is greater than that from both running and strength training")
+    print("The improvement from running training only is greater than that from both running and strength training")
 else:
-     print("The improvement from running and strength training is greater than that from running training only")
+    print("The improvement from running and strength training is greater than that from running training only")
 #running and strength training had a greater effect on the 5 km

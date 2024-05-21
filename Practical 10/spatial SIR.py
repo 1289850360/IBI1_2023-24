@@ -46,5 +46,3 @@ for t in range(100):
     plt.colorbar(ticks=[0, 1, 2], label='Status')  # Add colorbar with labels  
     plt.show()  
   
-# If you want to save the final state to a file, uncomment the following line  
-# plt.savefig("SIR_Spatial_Final_State.png")
